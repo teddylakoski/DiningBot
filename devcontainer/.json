@@ -1,0 +1,11 @@
+{
+  "name": "A2A Base Sepolia Classroom",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "forwardPorts": [7860, 8000],
+  "portsAttributes": {
+    "7860": {"label": "Gradio UI", "onAutoForward": "openBrowser"},
+    "8000": {"label": "A2A service", "onAutoForward": "silent"}
+  },
+  "postCreateCommand": "python -m pip install --user -r requirements.txt && python scripts/init_wallet.py",
+  "remoteEnv": {"PYTHONUNBUFFERED": "1"}
+}
